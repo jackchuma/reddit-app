@@ -1,0 +1,62 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+img {
+    width: 35px;
+    height: auto;
+}
+
+.search {
+    width: 650px;
+    height: 35px;
+    background-color: #f6f7f8;
+    border-radius: 4px;
+    border: 1px solid #edeff1;
+    color: #1c1c1c;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border: none;
+    background-color: #f6f7f8;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    color: #1c1c1c;
+}
+
+.buttons {
+    display: flex;
+    margin-right: 30px;
+}
+
+.log-in-button {
+    margin-right: 7.5px;
+    border: 1px solid #0079d3;
+    padding: 5px 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 20px;
+    color: #0079d3;
+}
+
+.sign-up-button {
+    margin-left: 7.5px;
+    background-color: #0079d3;
+    color: white;
+    padding: 5px 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 20px;
+}
