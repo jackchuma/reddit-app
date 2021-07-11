@@ -1,10 +1,14 @@
 import React from 'react';
 import './Posts.css';
+import Filters from '../Filters/Filters';
+import Post from '../Post/Post';
 
 function Posts() {
   return (
     <div className="Posts">
-      Posts will include rendered Post components
+      <p>Popular Posts</p>
+      <Filters />
+      <Post />
     </div>
   );
 }

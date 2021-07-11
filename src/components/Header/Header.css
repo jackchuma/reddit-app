@@ -51,6 +51,10 @@ input {
     color: #0079d3;
 }
 
+.log-in-button:hover {
+    background-color: rgba(0,0,0,0.04);
+}
+
 .sign-up-button {
     margin-left: 7.5px;
     background-color: #0079d3;
@@ -59,4 +63,8 @@ input {
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 20px;
+}
+
+.sign-up-button:hover {
+    background-color: #42adf0;
 }

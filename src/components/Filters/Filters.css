@@ -1,0 +1,130 @@
+.Filters {
+    border: 1px solid #ccc;
+    height: 50px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    gap: 10px;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.hot {
+    color: #0079d3;
+    display: flex;
+    align-items: center;
+    background-color: #f6f7f8;
+    gap: 5px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+}
+
+.hot:hover {
+    background-color: #e5e6e7;
+}
+
+.country-container {
+    background-color: #f6f7f8;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.country {
+    color: #0079d3;
+    background-color: #f6f7f8;
+    border: none;
+}
+
+.state-container {
+    background-color: #f6f7f8;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.state {
+    color: #0079d3;
+    background-color: #f6f7f8;
+    border: none;
+}
+
+.new {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #878a8c;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.new:hover {
+    background-color: #e5e6e7;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #878a8c;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.top:hover {
+    background-color: #e5e6e7;
+}
+
+.extra-menu {
+    display: flex;
+    align-items: center;
+    color: #878a8c;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.extra-menu:hover {
+    background-color: #f6f7f8;
+}
+
+.view {
+    display: flex;
+    align-items: center;
+    color: #878a8c;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.view:hover {
+    background-color: #f6f7f8;
+}

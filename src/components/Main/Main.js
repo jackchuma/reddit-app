@@ -1,10 +1,15 @@
 import React from 'react';
 import './Main.css';
+import Posts from '../Posts/Posts';
+import Sidebar from '../Sidebar/Sidebar';
 
 function Main() {
   return (
     <div className="Main">
-      Main will include Posts and Sidebar
+      <div className='content'>
+        <Posts />
+        <Sidebar />
+      </div>
     </div>
   );
 }
