@@ -39,36 +39,116 @@
     background-color: #e5e6e7;
 }
 
-.country-container {
-    background-color: #f6f7f8;
+.country-menu {
+    background-color: white;
     height: 30px;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.country-menu-button-visible {
+    color: #0079d3;
+    min-height: 30px;
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    border: none;
+    background-color: #f6f7f8;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
-.country {
-    color: #0079d3;
-    background-color: #f6f7f8;
+.country-list {
+    border: 1px solid #edeff1;
+    background-color: white;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+    min-height: 225px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 2px 4px 0 rgba(28, 28, 28, 0.2);
+}
+
+.country-list button {
+    background-color: white;
+    text-align: left;
     border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #878a8c;
 }
 
-.state-container {
-    background-color: #f6f7f8;
+.country-list button:hover {
+    background-color: #e9f6fd;
+    color: #1c1c1c;
+}
+
+#united-states {
+    color: #0079d3;
+}
+
+.state-menu {
+    background-color: white;
     height: 30px;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.state-menu-button-visible {
+    color: #0079d3;
+    min-height: 30px;
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    border: none;
+    background-color: #f6f7f8;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
-.state {
-    color: #0079d3;
-    background-color: #f6f7f8;
+.state-list {
+    border: 1px solid #edeff1;
+    background-color: white;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+    min-height: 225px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 2px 4px 0 rgba(28, 28, 28, 0.2);
+}
+
+.state-list button {
+    background-color: white;
+    text-align: left;
     border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #878a8c;
+}
+
+.state-list button:hover {
+    background-color: #e9f6fd;
+    color: #1c1c1c;
+}
+
+#all {
+    color: #0079d3;
 }
 
 .new {
@@ -78,8 +158,9 @@
     color: #878a8c;
     height: 30px;
     border-radius: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 0;
 }
 
 .new:hover {
@@ -93,8 +174,8 @@
     color: #878a8c;
     height: 30px;
     border-radius: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .top:hover {
@@ -121,8 +202,8 @@
     color: #878a8c;
     height: 30px;
     border-radius: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .view:hover {
