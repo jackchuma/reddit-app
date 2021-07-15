@@ -160,7 +160,6 @@
     border-radius: 15px;
     padding-left: 7px;
     padding-right: 7px;
-    margin-left: 0;
 }
 
 .new:hover {
@@ -184,28 +183,115 @@
 
 .extra-menu {
     display: flex;
-    align-items: center;
-    color: #878a8c;
+    align-items: flex-start;
     height: 30px;
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: top;
 }
 
-.extra-menu:hover {
+.dots {
+    color: #878a8c;
+    min-height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.dots:hover {
     background-color: #f6f7f8;
+}
+
+.dots-dropdown {
+    border: 1px solid #edeff1;
+    background-color: white;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(28, 28, 28, 0.2);
+}
+
+.dots-dropdown button {
+    background-color: white;
+    text-align: left;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #878a8c;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dots-dropdown button:hover {
+    background-color: #e9f6fd;
+    color: #1c1c1c;
 }
 
 .view {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: #878a8c;
     height: 30px;
     border-radius: 15px;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: top;
 }
 
-.view:hover {
+.view-button {
+    color: #878a8c;
+    min-height: 30px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.view-button:hover {
     background-color: #f6f7f8;
+}
+
+.view-dropdown {
+    border: 1px solid #edeff1;
+    background-color: white;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(28, 28, 28, 0.2);
+}
+
+.view-dropdown button {
+    background-color: white;
+    text-align: left;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #878a8c;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-dropdown button:hover {
+    background-color: #e9f6fd;
+    color: #1c1c1c;
+}
+
+#card {
+    color: #0079d3;
 }
