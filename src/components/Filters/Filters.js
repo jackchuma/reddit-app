@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import './Filters.css';
 import {FaFire} from 'react-icons/fa';
-import {BsGearWide} from 'react-icons/bs';
+import {BsGearWide, BsLayoutThreeColumns} from 'react-icons/bs';
 import {AiOutlineArrowUp} from 'react-icons/ai';
 import {BsViewStacked, BsArrowUpRight} from 'react-icons/bs';
 import {IoIosArrowDown} from 'react-icons/io';
 import {stateList} from './states';
 import {countryList} from './countries';
+import {VscListFlat} from 'react-icons/vsc';
 
 function Filters() {
 
   const [selectedCountry, setSelectedCountry] = useState({name: 'United States', id: 'united-states'});
-  const [selectedState, setSelectedState] = useState({name: 'All', id: 'all'});
+  const [selectedState, setSelectedState] = useState({name: 'All', id: 'All'});
+  const [selectedView, setSelectedView] = useState({icon: <BsViewStacked />, id: 'card'})
+
+  const icon1 = <BsViewStacked />;
 
   const handleStateClick = () => {
     const box = document.getElementById('state-list');
@@ -84,6 +88,24 @@ function Filters() {
     }
   };
 
+  const handleViewListClick = (e) => {
+    const oldLink = document.getElementById(selectedView.id);
+    oldLink.style.color = '#878a8c';
+
+    if (e.target.id === 'card') {
+      setSelectedView({icon: <BsViewStacked />, id: 'card'});
+    } else if (e.target.id === 'classic') {
+      setSelectedView({icon: <BsLayoutThreeColumns style={{transform: 'rotate(90deg)'}} />, id: 'classic'});
+    } else {
+      setSelectedView({icon: <VscListFlat />, id: 'compact'});
+    }
+
+    const box = document.getElementById('view-dropdown');
+    const selected = document.getElementById(e.target.id);
+    box.style.display = 'none';
+    selected.style.color = '#0079d3';
+  }
+
   return (
     <div className="Filters">
       <div className='left'>
@@ -100,7 +122,7 @@ function Filters() {
           </div>
         </div>
         <div className='state-menu' id='state-menu'>
-          <button className='state-menu-button-visible' onClick={handleStateClick}>{selectedState.name} <IoIosArrowDown /></button>
+          <button className='state-menu-button-visible' onClick={handleStateClick}>{selectedState.id} <IoIosArrowDown /></button>
           <div className='state-list' id='state-list'>
             {stateList.map((stateName) => {
               return <button id={stateName.id} value={stateName.name} onClick={handleStateListClick}>{stateName.name}</button>
@@ -124,16 +146,16 @@ function Filters() {
       </div>
       <div className='right'>
         <div className='view'>
-          <button className='view-button' onClick={handleViewClick}><BsViewStacked /> <IoIosArrowDown /></button>
+          <button className='view-button' onClick={handleViewClick}>{selectedView.icon} <IoIosArrowDown /></button>
           <div className='view-dropdown' id='view-dropdown'>
-            <button id='card'>Card</button>
-            <button id='classic'>Classic</button>
-            <button id='compact'>Compact</button>
+            <button id='card' value={icon1} onClick={handleViewListClick}><BsViewStacked /> Card</button>
+            <button id='classic' value={<BsLayoutThreeColumns />} onClick={handleViewListClick}><BsLayoutThreeColumns style={{transform: 'rotate(90deg)'}} /> Classic</button>
+            <button id='compact' value={<VscListFlat />} onClick={handleViewListClick}><VscListFlat /> Compact</button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Filters;
