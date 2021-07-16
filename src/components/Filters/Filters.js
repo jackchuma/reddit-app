@@ -15,15 +15,19 @@ function Filters() {
   const [selectedState, setSelectedState] = useState({name: 'All', id: 'All'});
   const [selectedView, setSelectedView] = useState({icon: <BsViewStacked />, id: 'card'})
 
-  const icon1 = <BsViewStacked />;
-
   const handleStateClick = () => {
-    const box = document.getElementById('state-list');
+    const stateBox = document.getElementById('state-list');
+    const countryBox = document.getElementById('country-list');
+    const dotsBox = document.getElementById('dots-dropdown');
+    const viewBox = document.getElementById('view-dropdown');
 
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
+    if (stateBox.style.display === 'flex') {
+      stateBox.style.display = 'none';
     } else {
-      box.style.display = 'flex';
+      stateBox.style.display = 'flex';
+      countryBox.style.display = 'none';
+      dotsBox.style.display = 'none';
+      viewBox.style.display = 'none';
     }
   };
 
@@ -43,11 +47,18 @@ function Filters() {
   };
 
   const handleCountryClick = () => {
-    const box = document.getElementById('country-list');
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
+    const stateBox = document.getElementById('state-list');
+    const countryBox = document.getElementById('country-list');
+    const dotsBox = document.getElementById('dots-dropdown');
+    const viewBox = document.getElementById('view-dropdown');
+
+    if (countryBox.style.display === 'flex') {
+      countryBox.style.display = 'none';
     } else {
-      box.style.display = 'flex';
+      countryBox.style.display = 'flex';
+      stateBox.style.display = 'none';
+      dotsBox.style.display = 'none';
+      viewBox.style.display = 'none';
     }
   };
 
@@ -71,20 +82,34 @@ function Filters() {
   };
 
   const handleDotsClick = () => {
-    const box = document.getElementById('dots-dropdown');
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
+    const stateBox = document.getElementById('state-list');
+    const countryBox = document.getElementById('country-list');
+    const dotsBox = document.getElementById('dots-dropdown');
+    const viewBox = document.getElementById('view-dropdown');
+
+    if (dotsBox.style.display === 'flex') {
+      dotsBox.style.display = 'none';
     } else {
-      box.style.display = 'flex';
+      dotsBox.style.display = 'flex';
+      stateBox.style.display = 'none';
+      countryBox.style.display = 'none';
+      viewBox.style.display = 'none';
     }
   };
 
   const handleViewClick = () => {
-    const box = document.getElementById('view-dropdown');
-    if (box.style.display === 'flex') {
-      box.style.display = 'none';
+    const stateBox = document.getElementById('state-list');
+    const countryBox = document.getElementById('country-list');
+    const dotsBox = document.getElementById('dots-dropdown');
+    const viewBox = document.getElementById('view-dropdown');
+
+    if (viewBox.style.display === 'flex') {
+      viewBox.style.display = 'none';
     } else {
-      box.style.display = 'flex';
+      viewBox.style.display = 'flex';
+      stateBox.style.display = 'none';
+      countryBox.style.display = 'none';
+      dotsBox.style.display = 'none';
     }
   };
 
@@ -148,9 +173,9 @@ function Filters() {
         <div className='view'>
           <button className='view-button' onClick={handleViewClick}>{selectedView.icon} <IoIosArrowDown /></button>
           <div className='view-dropdown' id='view-dropdown'>
-            <button id='card' value={icon1} onClick={handleViewListClick}><BsViewStacked /> Card</button>
-            <button id='classic' value={<BsLayoutThreeColumns />} onClick={handleViewListClick}><BsLayoutThreeColumns style={{transform: 'rotate(90deg)'}} /> Classic</button>
-            <button id='compact' value={<VscListFlat />} onClick={handleViewListClick}><VscListFlat /> Compact</button>
+            <button id='card' onClick={handleViewListClick}><BsViewStacked /> Card</button>
+            <button id='classic' onClick={handleViewListClick}><BsLayoutThreeColumns style={{transform: 'rotate(90deg)'}} /> Classic</button>
+            <button id='compact' onClick={handleViewListClick}><VscListFlat /> Compact</button>
           </div>
         </div>
       </div>
