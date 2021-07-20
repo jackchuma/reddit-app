@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     margin-left: 15px;
+    font-weight: 600;
 }
 
 img {
@@ -49,6 +50,7 @@ input {
     margin-bottom: 0;
     border-radius: 20px;
     color: #0079d3;
+    font-weight: 600;
 }
 
 .log-in-button:hover {
@@ -63,6 +65,7 @@ input {
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 20px;
+    font-weight: 600;
 }
 
 .sign-up-button:hover {

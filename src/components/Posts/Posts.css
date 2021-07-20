@@ -1,8 +1,13 @@
 .Posts {
-    border: 1px solid black;
-    width: 650px;
+    width: 850px;
 }
 
 p {
     text-align: left;
+}
+
+#popular-posts {
+    color: #1a1a1b;
+    font-size: 14px;
+    font-weight: 500;
 }

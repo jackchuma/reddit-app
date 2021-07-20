@@ -6,7 +6,7 @@ import Post from '../Post/Post';
 function Posts() {
   return (
     <div className="Posts">
-      <p>Popular Posts</p>
+      <p id='popular-posts'>Popular Posts</p>
       <Filters />
       <Post />
     </div>
