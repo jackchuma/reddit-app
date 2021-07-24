@@ -8,6 +8,7 @@ import {IoIosArrowDown} from 'react-icons/io';
 import {stateList} from './states';
 import {countryList} from './countries';
 import {VscListFlat} from 'react-icons/vsc';
+import {Link} from 'react-router-dom';
 
 function Filters() {
 
@@ -81,6 +82,79 @@ function Filters() {
     }
   };
 
+  const handleHotClick = (e) => {
+    const stateMenu = document.getElementById('state-menu');
+    stateMenu.style.display = 'flex';
+
+    const countryMenu = document.getElementById('country-menu');
+    countryMenu.style.display = 'flex';
+
+    const hotButton = document.getElementById('hot');
+    hotButton.style.backgroundColor = '#e5e6e7';
+    hotButton.style.color = '#0079d3';
+
+    const newButton = document.getElementById('new');
+    newButton.style.backgroundColor = 'white';
+    newButton.style.color = '#878a8c';
+
+    const topButton = document.getElementById('top');
+    topButton.style.backgroundColor = 'white';
+    topButton.style.color = '#878a8c';
+
+    const dots = document.getElementById('extra-menu');
+    dots.style.display = 'flex';
+
+    const risingMenu = document.getElementById('rising-view');
+    risingMenu.style.display = 'none';
+  }
+
+  const handleNewClick = (e) => {
+
+    const stateMenu = document.getElementById('state-menu');
+    stateMenu.style.display = 'none';
+
+    const countryMenu = document.getElementById('country-menu');
+    countryMenu.style.display = 'none';
+
+    const hotButton = document.getElementById('hot');
+    hotButton.style.backgroundColor = 'white';
+    hotButton.style.color = '#878a8c';
+
+    const newButton = document.getElementById('new');
+    newButton.style.backgroundColor = '#e5e6e7';
+    newButton.style.color = '#0079d3';
+
+    const topButton = document.getElementById('top');
+    topButton.style.backgroundColor = 'white';
+    topButton.style.color = '#878a8c';
+
+    const risingMenu = document.getElementById('rising-view');
+    risingMenu.style.display = 'none';
+  };
+
+  const handleTopClick = (e) => {
+    const stateMenu = document.getElementById('state-menu');
+    stateMenu.style.display = 'none';
+
+    const countryMenu = document.getElementById('country-menu');
+    countryMenu.style.display = 'none';
+
+    const hotButton = document.getElementById('hot');
+    hotButton.style.backgroundColor = 'white';
+    hotButton.style.color = '#878a8c';
+
+    const newButton = document.getElementById('new');
+    newButton.style.backgroundColor = 'white';
+    newButton.style.color = '#878a8c';
+
+    const topButton = document.getElementById('top');
+    topButton.style.backgroundColor = '#e5e6e7';
+    topButton.style.color = '#0079d3';
+
+    const risingMenu = document.getElementById('rising-view');
+    risingMenu.style.display = 'none';
+  }
+
   const handleDotsClick = () => {
     const stateBox = document.getElementById('state-list');
     const countryBox = document.getElementById('country-list');
@@ -96,6 +170,35 @@ function Filters() {
       viewBox.style.display = 'none';
     }
   };
+
+  const handleRisingClick = (e) => {
+    const stateMenu = document.getElementById('state-menu');
+    stateMenu.style.display = 'none';
+
+    const countryMenu = document.getElementById('country-menu');
+    countryMenu.style.display = 'none';
+
+    const hotButton = document.getElementById('hot');
+    hotButton.style.backgroundColor = 'white';
+    hotButton.style.color = '#878a8c';
+
+    const newButton = document.getElementById('new');
+    newButton.style.backgroundColor = 'white';
+    newButton.style.color = '#878a8c';
+
+    const topButton = document.getElementById('top');
+    topButton.style.backgroundColor = 'white';
+    topButton.style.color = '#878a8c';
+
+    const dotsMenu = document.getElementById('extra-menu');
+    dotsMenu.style.display = 'none';
+
+    const dotsList = document.getElementById('dots-dropdown');
+    dotsList.style.display = 'none';
+
+    const risingButton = document.getElementById('rising-view');
+    risingButton.style.display = 'flex';
+  }
 
   const handleViewClick = () => {
     const stateBox = document.getElementById('state-list');
@@ -134,11 +237,13 @@ function Filters() {
   return (
     <div className="Filters">
       <div className='left'>
-        <div className='hot'>
-          <FaFire />
-         <p>Hot</p>
-        </div>
-        <div className='country-menu'>
+        <Link style={{textDecoration: 'none'}} to='/hot'>
+          <div className='hot' id='hot' onClick={handleHotClick}>
+            <FaFire />
+            <p>Hot</p>
+          </div>
+        </Link>
+        <div className='country-menu' id='country-menu'>
           <button className='country-menu-button-visible' onClick={handleCountryClick}>{selectedCountry.name} <IoIosArrowDown /></button>
           <div className='country-list' id='country-list'>
             {countryList.map((countryName) => {
@@ -154,19 +259,29 @@ function Filters() {
             })}
           </div>
         </div>
-        <div className='new' id='new'>
-          <BsGearWide />
-          <p>New</p>
-        </div>
-        <div className='top'>
-          <AiOutlineArrowUp />
-          <p>Top</p>
-        </div>
-        <div className='extra-menu'>
+        <Link style={{textDecoration: 'none'}} to='/new'>
+          <div onClick={handleNewClick} className='new' id='new'>
+            <BsGearWide />
+            <p>New</p>
+          </div>
+        </Link>
+        <Link style={{textDecoration: 'none'}} to='/top'>
+          <div className='top' id='top' onClick={handleTopClick}>
+            <AiOutlineArrowUp />
+            <p>Top</p>
+          </div>
+        </Link>
+        <div className='extra-menu' id='extra-menu'>
           <button className='dots' onClick={handleDotsClick}>&#8226;&#8226;&#8226;</button>
           <div className='dots-dropdown' id='dots-dropdown'>
-            <button id='rising' value='rising'><BsArrowUpRight /> Rising</button>
+            <Link style={{textDecoration: 'none'}} to='/rising'>
+              <button id='rising' value='rising' onClick={handleRisingClick}><BsArrowUpRight /> Rising</button>
+            </Link>
           </div>
+        </div>
+        <div className='rising' id='rising-view'>
+          <BsArrowUpRight />
+          <p>Rising</p>
         </div>
       </div>
       <div className='right'>

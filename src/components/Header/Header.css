@@ -1,6 +1,6 @@
 .Header {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     background-color: white;
 }
@@ -26,6 +26,7 @@ img {
     color: #1c1c1c;
     display: flex;
     align-items: center;
+    margin-left: 15%;
 }
 
 input {

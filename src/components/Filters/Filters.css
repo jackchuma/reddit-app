@@ -248,6 +248,18 @@
     color: #1c1c1c;
 }
 
+.rising {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    color: #0079d3;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #e5e6e7;
+}
+
 .view {
     display: flex;
     align-items: flex-start;
