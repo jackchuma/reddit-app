@@ -84,7 +84,10 @@ function Filters() {
 
   const handleHotClick = (e) => {
     const stateMenu = document.getElementById('state-menu');
-    stateMenu.style.display = 'flex';
+
+    if (selectedCountry.name === 'United States') {
+      stateMenu.style.display = 'flex';
+    }
 
     const countryMenu = document.getElementById('country-menu');
     countryMenu.style.display = 'flex';

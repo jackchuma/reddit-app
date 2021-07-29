@@ -1,6 +1,7 @@
 import React from 'react';
 import './Posts.css';
 import Filters from '../Filters/Filters';
+import AllPosts from './AllPosts';
 import HotPosts from './HotPosts';
 import NewPosts from './NewPosts';
 import TopPosts from './TopPosts';
@@ -13,7 +14,7 @@ function Posts() {
       <p id='popular-posts'>Popular Posts</p>
       <Filters />
       <Switch>
-        <Route path='/' exact component={HotPosts} />
+        <Route path='/' exact component={AllPosts} />
         <Route path='/hot' component={HotPosts} />
         <Route path='/new' component={NewPosts} />
         <Route path='/top' component={TopPosts} />
