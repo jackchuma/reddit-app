@@ -250,7 +250,7 @@ function Filters() {
           <button className='country-menu-button-visible' onClick={handleCountryClick}>{selectedCountry.name} <IoIosArrowDown /></button>
           <div className='country-list' id='country-list'>
             {countryList.map((countryName) => {
-              return <button id={countryName.id} value={countryName.name} onClick={handleCountryListClick}>{countryName.name}</button>
+              return <button key={countryName.id} id={countryName.id} value={countryName.name} onClick={handleCountryListClick}>{countryName.name}</button>
             })}
           </div>
         </div>
@@ -258,7 +258,7 @@ function Filters() {
           <button className='state-menu-button-visible' onClick={handleStateClick}>{selectedState.id} <IoIosArrowDown /></button>
           <div className='state-list' id='state-list'>
             {stateList.map((stateName) => {
-              return <button id={stateName.id} value={stateName.name} onClick={handleStateListClick}>{stateName.name}</button>
+              return <button key={stateName.id} id={stateName.id} value={stateName.name} onClick={handleStateListClick}>{stateName.name}</button>
             })}
           </div>
         </div>
