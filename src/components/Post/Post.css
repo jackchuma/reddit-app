@@ -105,6 +105,21 @@
     font-weight: 450;
     text-align: left;
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.post-media img {
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    max-height: 500px;
 }
 
 .post-interactions {

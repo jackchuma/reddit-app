@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './Post.css';
 import {ImArrowUp, ImArrowDown} from 'react-icons/im';
 import postLogo from './post-logo.png';
-import {AiOutlinePlus} from 'react-icons/ai';
 import {FaRegCommentAlt} from 'react-icons/fa';
 import {RiShareForwardLine} from 'react-icons/ri';
 import {BsBookmark} from 'react-icons/bs';
@@ -13,6 +12,8 @@ function Post(props) {
   const thread = props.thread;
   const title = props.title;
   const created = props.created;
+  const comments = props.comments;
+  const url = props.url;
 
   const [ups, setUps] = useState(props.ups);
   const [downs, setDowns] = useState(props.downs);
@@ -114,16 +115,18 @@ function Post(props) {
             <p className='author'>Posted by u/{author} {time} ago</p>
           </div>
           <div className='top-banner-right'>
-            <p className='join-button'><AiOutlinePlus id='plus-sign' />Join</p>
           </div>
         </div>
         <div className='post-content'>
           {title}
+          <div className='post-media'>
+            <img classname='post-media-img' src={url} alt='' />
+          </div>
         </div>
         <div className='post-interactions'>
           <div className='post-interactions-button' id='comments-button'>
             <div className='post-interactions-symbol'><FaRegCommentAlt /></div>
-            <p className='post-interactions-buttontext'>23.9k Comments</p>
+            <p className='post-interactions-buttontext'>{comments} Comments</p>
           </div>
           <div className='post-interactions-button' id='share-button'>
             <div className='post-interactions-symbol'><RiShareForwardLine /></div>

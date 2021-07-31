@@ -6,8 +6,8 @@ import { selectPosts } from './postsSlice';
 
 function AllPosts() {
     const allPostsHome = useSelector(selectPosts);
+    let i = 0;
     console.log(allPostsHome);
-    console.log(Date.now());
 
     return (
         <div className='all-posts'>
@@ -19,16 +19,24 @@ function AllPosts() {
                 const ups = post.data.ups;
                 const downs = post.data.downs;
                 const created = post.data.created_utc;
+                const comments = post.data.num_comments;
+                const url = post.data.url;
+                i++;
 
-                return <Post 
-                    key={id} 
-                    id={id}
-                    author={author}
-                    thread={thread}
-                    title={title}
-                    ups={ups}
-                    downs={downs}
-                    created={created} />
+                if (i > 2) {
+                    return <Post
+                        key={id} 
+                        id={id}
+                        author={author}
+                        thread={thread}
+                        title={title}
+                        ups={ups}
+                        downs={downs}
+                        created={created}
+                        comments={comments}
+                        url={url} />
+                }
+                return '';
             })}
         </div>
   );
