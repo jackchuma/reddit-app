@@ -19,11 +19,11 @@ function AllPosts() {
                 const ups = post.data.ups;
                 const downs = post.data.downs;
                 const created = post.data.created_utc;
-                const comments = post.data.num_comments;
                 const url = post.data.url;
+                const postHint = post.data.post_hint;
                 i++;
 
-                if (i > 2) {
+                if (i > 2 && postHint === 'image') {
                     return <Post
                         key={id} 
                         id={id}
@@ -33,7 +33,6 @@ function AllPosts() {
                         ups={ups}
                         downs={downs}
                         created={created}
-                        comments={comments}
                         url={url} />
                 }
                 return '';

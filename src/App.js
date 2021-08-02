@@ -21,7 +21,7 @@ function App() {
     return (
       <div className='App'>
         <Header />
-        <h1>Loading...</h1>
+        <h1 style={{marginTop: '60px'}} >Loading...</h1>
       </div>
     );
   };

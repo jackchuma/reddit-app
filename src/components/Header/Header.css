@@ -3,6 +3,9 @@
     justify-content: left;
     align-items: center;
     background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .logo {

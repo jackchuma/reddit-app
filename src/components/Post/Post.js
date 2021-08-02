@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './Post.css';
 import {ImArrowUp, ImArrowDown} from 'react-icons/im';
 import postLogo from './post-logo.png';
-import {FaRegCommentAlt} from 'react-icons/fa';
-import {RiShareForwardLine} from 'react-icons/ri';
 import {BsBookmark} from 'react-icons/bs';
 
 function Post(props) {
@@ -12,7 +10,6 @@ function Post(props) {
   const thread = props.thread;
   const title = props.title;
   const created = props.created;
-  const comments = props.comments;
   const url = props.url;
 
   const [ups, setUps] = useState(props.ups);
@@ -20,9 +17,12 @@ function Post(props) {
 
   let rawScore = ups - downs;
   let score = rawScore.toString();
-  if (rawScore > 9999) {
+  if (rawScore > 9999 && rawScore < 100000) {
     rawScore = rawScore / 1000;
     score = rawScore.toFixed(1) + 'k';
+  } else if (rawScore > 99999) {
+    rawScore = rawScore / 1000;
+    score = rawScore.toFixed(0) + 'k';
   }
 
   const timeSec = Date.now() / 1000 - created;
@@ -120,18 +120,10 @@ function Post(props) {
         <div className='post-content'>
           {title}
           <div className='post-media'>
-            <img classname='post-media-img' src={url} alt='' />
+            <img className='post-media-img' src={url} alt='' />
           </div>
         </div>
         <div className='post-interactions'>
-          <div className='post-interactions-button' id='comments-button'>
-            <div className='post-interactions-symbol'><FaRegCommentAlt /></div>
-            <p className='post-interactions-buttontext'>{comments} Comments</p>
-          </div>
-          <div className='post-interactions-button' id='share-button'>
-            <div className='post-interactions-symbol'><RiShareForwardLine /></div>
-            <p className='post-interactions-buttontext'>Share</p>
-          </div>
           <div className='post-interactions-button' id='save-button'>
             <div className='post-interactions-symbol'><BsBookmark /></div>
             <p className='post-interactions-buttontext'>Save</p>
