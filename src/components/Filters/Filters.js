@@ -77,14 +77,14 @@ function Filters() {
   };
 
   const handleHotClick = (e) => {
-    const stateMenu = document.getElementById('state-menu');
+    //const stateMenu = document.getElementById('state-menu');
 
-    if (selectedCountry.name === 'United States') {
-      stateMenu.style.display = 'flex';
-    }
+    //if (selectedCountry.name === 'United States') {
+      //stateMenu.style.display = 'flex';
+    //}
 
-    const countryMenu = document.getElementById('country-menu');
-    countryMenu.style.display = 'flex';
+    //const countryMenu = document.getElementById('country-menu');
+    //countryMenu.style.display = 'flex';
 
     const hotButton = document.getElementById('hot');
     hotButton.style.backgroundColor = '#e5e6e7';

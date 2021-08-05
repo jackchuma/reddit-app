@@ -1,18 +1,16 @@
 import React from 'react';
 import Post from '../Post/Post';
-import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import { selectPosts } from './postsSlice';
 
 function AllPosts() {
     const allPostsHome = useSelector(selectPosts);
     let i = 0;
-    console.log(allPostsHome);
 
     return (
         <div className='all-posts'>
             {Object.values(allPostsHome).map(post => {
-                const id = uuidv4();
+                const id = post.data.id;
                 const author = post.data.author;
                 const thread = post.data.subreddit;
                 const title = post.data.title;
