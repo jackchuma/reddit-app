@@ -6,6 +6,7 @@ import HotPosts from './HotPosts';
 import NewPosts from './NewPosts';
 import TopPosts from './TopPosts';
 import RisingPosts from './RisingPosts';
+import FilteredPosts from './FilteredPosts';
 import { Switch, Route } from 'react-router-dom';
 
 function Posts() {
@@ -19,6 +20,7 @@ function Posts() {
         <Route path='/new' component={NewPosts} />
         <Route path='/top' component={TopPosts} />
         <Route path='/rising' component={RisingPosts} />
+        <Route path='/filtered' component={FilteredPosts} />
       </Switch>
     </div>
   );
