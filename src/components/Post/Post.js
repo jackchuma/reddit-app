@@ -140,10 +140,10 @@ function Post(props) {
           </div>
         </div>
         <div className='post-interactions'>
-          <div className='post-interactions-button' id='save-button' onClick={handleSaveClick}>
+          <button className='post-interactions-button' id='save-button' onClick={handleSaveClick}>
             <div className='post-interactions-symbol'><BsBookmark /></div>
             <p className='post-interactions-buttontext'>Save</p>
-          </div>
+          </button>
         </div>
       </div>
     </div>

@@ -138,6 +138,8 @@
     font-weight: 700;
     gap: 5px;
     color: #878a8c;
+    border: none;
+    background-color: white;
 }
 
 .post-interactions-button:hover {
