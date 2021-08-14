@@ -41,13 +41,13 @@ input {
     color: #1c1c1c;
 }
 
-.buttons {
+.saved-button {
     display: flex;
-    margin-right: 30px;
+    justify-content: center;
+    margin-left: 8%;
 }
 
-.log-in-button {
-    margin-right: 7.5px;
+.saved-posts {
     border: 1px solid #0079d3;
     padding: 5px 30px;
     margin-top: 0;
@@ -57,7 +57,7 @@ input {
     font-weight: 600;
 }
 
-.log-in-button:hover {
+.saved-posts:hover {
     background-color: rgba(0,0,0,0.04);
 }
 

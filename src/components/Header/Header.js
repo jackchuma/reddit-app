@@ -36,6 +36,11 @@ function Header() {
         </Link>
         <input type='text' placeholder='Search' id='search' value={searchTerm} onChange={onSearchChangeHandler} onKeyDown={handleKeyDown} />
       </div>
+      <div className='saved-button'>
+        <Link style={{textDecoration: 'none'}} to='/saved'>
+          <p className='saved-posts'>My Saved Posts</p>
+        </Link>
+      </div>
     </div>
   );
 }

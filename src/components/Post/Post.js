@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Post.css';
-import {ImArrowUp, ImArrowDown} from 'react-icons/im';
+import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import postLogo from './post-logo.png';
-import {BsBookmark} from 'react-icons/bs';
+import { BsBookmark } from 'react-icons/bs';
+import { addSavedPost } from '../../features/savedPosts/savedPostsSlice';
+import { useDispatch } from 'react-redux';
 
 function Post(props) {
 
@@ -11,6 +13,8 @@ function Post(props) {
   const title = props.title;
   const created = props.created;
   const url = props.url;
+  const id = props.id;
+  const dispatch = useDispatch();
 
   const [ups, setUps] = useState(props.ups);
   const [downs, setDowns] = useState(props.downs);
@@ -99,6 +103,18 @@ function Post(props) {
     score = calculateScore(ups, downs);
   }
 
+  const handleSaveClick = (e) => {
+    dispatch(addSavedPost({
+      author: author,
+      created: created,
+      downs: downs,
+      id: id,
+      thread: thread,
+      title: title,
+      ups: ups,
+      url: url
+  }))};
+
   return (
     <div className="Post">
       <div className='likes-column'>
@@ -124,7 +140,7 @@ function Post(props) {
           </div>
         </div>
         <div className='post-interactions'>
-          <div className='post-interactions-button' id='save-button'>
+          <div className='post-interactions-button' id='save-button' onClick={handleSaveClick}>
             <div className='post-interactions-symbol'><BsBookmark /></div>
             <p className='post-interactions-buttontext'>Save</p>
           </div>
