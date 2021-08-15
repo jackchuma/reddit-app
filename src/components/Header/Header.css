@@ -1,6 +1,6 @@
 .Header {
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
     align-items: center;
     background-color: white;
     position: fixed;
@@ -11,7 +11,6 @@
 .logo {
     display: flex;
     align-items: center;
-    margin-left: 15px;
     font-weight: 600;
 }
 
@@ -21,7 +20,7 @@ img {
 }
 
 .search {
-    width: 650px;
+    width: 45%;
     height: 35px;
     background-color: #f6f7f8;
     border-radius: 4px;
@@ -29,7 +28,6 @@ img {
     color: #1c1c1c;
     display: flex;
     align-items: center;
-    margin-left: 15%;
 }
 
 input {
@@ -44,7 +42,6 @@ input {
 .saved-button {
     display: flex;
     justify-content: center;
-    margin-left: 8%;
 }
 
 .saved-posts {
@@ -74,4 +71,13 @@ input {
 
 .sign-up-button:hover {
     background-color: #42adf0;
+}
+
+@media only screen and (max-width: 800px) {
+    .saved-posts {
+        padding: 5px 10px;
+    }
+    .logo-text {
+        display: none;
+    }
 }
