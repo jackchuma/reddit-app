@@ -27,7 +27,7 @@ function Header() {
       <Link style={{textDecoration: 'none', color: '#1a1a1b'}} to='/'>
         <div className="logo">
           <img src={logo} alt='App Logo' />
-          <p className="logo-text">Jack's Reddit App</p>
+          <p className="logo-text"> Jack's Reddit App</p>
         </div>
       </Link>
       <div className='search'>

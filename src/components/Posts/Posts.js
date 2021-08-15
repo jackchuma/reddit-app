@@ -13,7 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 function Posts() {
   return (
     <div className="Posts">
-      <p id='popular-posts'>Popular Posts</p>
+      <p id='popular-posts'>Funny Posts</p>
       <Filters />
       <Switch>
         <Route path='/' exact component={AllPosts} />

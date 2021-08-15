@@ -80,4 +80,7 @@ input {
     .logo-text {
         display: none;
     }
+    .Header {
+        height: 50px;
+    }
 }
