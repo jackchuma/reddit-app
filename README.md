@@ -14,9 +14,3 @@ People should come to this website when they are in need of a laugh.  It connect
 * Jest, Enzyme, and Selenium
 * Git and Github
 * Command Line
-
-### Future Work
-
-* Need to write unit tests and end-to-end tests
-* Publish to the web
-* Allow search bar to connect to API separately instead of just searching loaded posts
