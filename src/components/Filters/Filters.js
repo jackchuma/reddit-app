@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
 import './Filters.css';
 import {FaFire} from 'react-icons/fa';
 import {BsGearWide} from 'react-icons/bs';
 import {AiOutlineArrowUp} from 'react-icons/ai';
-import {BsArrowUpRight} from 'react-icons/bs';
-import {IoIosArrowDown} from 'react-icons/io';
-import {stateList} from './states';
-import {countryList} from './countries';
 import {Link} from 'react-router-dom';
 
 function Filters() {
 
-  const handleHotClick = (e) => {
+  const handleHotClick = () => {
     const hotButton = document.getElementById('hot');
     hotButton.style.backgroundColor = '#e5e6e7';
     hotButton.style.color = '#0079d3';
@@ -25,7 +20,7 @@ function Filters() {
     topButton.style.color = '#878a8c';
   }
 
-  const handleNewClick = (e) => {
+  const handleNewClick = () => {
     const hotButton = document.getElementById('hot');
     hotButton.style.backgroundColor = 'white';
     hotButton.style.color = '#878a8c';
@@ -39,7 +34,7 @@ function Filters() {
     topButton.style.color = '#878a8c';
   };
 
-  const handleTopClick = (e) => {
+  const handleTopClick = () => {
     const hotButton = document.getElementById('hot');
     hotButton.style.backgroundColor = 'white';
     hotButton.style.color = '#878a8c';
