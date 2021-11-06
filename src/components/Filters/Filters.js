@@ -8,51 +8,42 @@ function Filters() {
 
   const handleHotClick = () => {
     const hotButton = document.getElementById('hot');
-    hotButton.style.backgroundColor = '#e5e6e7';
-    hotButton.style.color = '#0079d3';
+    hotButton.className = 'selected';
 
     const newButton = document.getElementById('new');
-    newButton.style.backgroundColor = 'white';
-    newButton.style.color = '#878a8c';
+    newButton.className = 'new';
 
     const topButton = document.getElementById('top');
-    topButton.style.backgroundColor = 'white';
-    topButton.style.color = '#878a8c';
+    topButton.className = 'top';
   }
 
   const handleNewClick = () => {
     const hotButton = document.getElementById('hot');
-    hotButton.style.backgroundColor = 'white';
-    hotButton.style.color = '#878a8c';
+    hotButton.className = 'hot';
 
     const newButton = document.getElementById('new');
-    newButton.style.backgroundColor = '#e5e6e7';
-    newButton.style.color = '#0079d3';
+    newButton.className = 'selected';
 
     const topButton = document.getElementById('top');
-    topButton.style.backgroundColor = 'white';
-    topButton.style.color = '#878a8c';
+    topButton.className = 'top';
   };
 
   const handleTopClick = () => {
     const hotButton = document.getElementById('hot');
-    hotButton.style.backgroundColor = 'white';
-    hotButton.style.color = '#878a8c';
+    hotButton.className = 'hot';
 
     const newButton = document.getElementById('new');
-    newButton.style.backgroundColor = 'white';
-    newButton.style.color = '#878a8c';
+    newButton.className = 'new';
 
     const topButton = document.getElementById('top');
-    topButton.style.backgroundColor = '#e5e6e7';
-    topButton.style.color = '#0079d3';
+    topButton.className = 'selected';
   }
 
   return (
     <div className="Filters">
       <div className='left'>
         <Link style={{textDecoration: 'none'}} to='/hot'>
-          <div className='hot' id='hot' onClick={handleHotClick}>
+          <div className='hot selected' id='hot' onClick={handleHotClick}>
             <FaFire />
             <p>Hot</p>
           </div>
