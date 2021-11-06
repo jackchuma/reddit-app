@@ -19,6 +19,7 @@ function AllPosts() {
                 const created = post.data.created_utc;
                 const url = post.data.url;
                 const postHint = post.data.post_hint;
+                const isSaved = false;
                 i++;
 
                 if (i > 2 && postHint === 'image') {
@@ -31,7 +32,8 @@ function AllPosts() {
                         ups={ups}
                         downs={downs}
                         created={created}
-                        url={url} />
+                        url={url}
+                        isSaved={isSaved} />
                 }
                 return '';
             })}

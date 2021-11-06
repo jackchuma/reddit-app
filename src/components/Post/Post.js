@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Post.css';
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import postLogo from './post-logo.png';
-import { BsBookmark } from 'react-icons/bs';
+import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
 import { addSavedPost } from '../../features/savedPosts/savedPostsSlice';
 import { useDispatch } from 'react-redux';
 
@@ -18,6 +18,7 @@ function Post(props) {
 
   const [ups, setUps] = useState(props.ups);
   const [downs, setDowns] = useState(props.downs);
+  const [isSaved, setIsSaved] = useState(props.isSaved);
 
   let rawScore = ups - downs;
   let score = rawScore.toString();
@@ -103,7 +104,22 @@ function Post(props) {
     score = calculateScore(ups, downs);
   }
 
-  const handleSaveClick = (e) => {
+  const handleSaveClick = () => {
+    const thisPost = document.getElementById(id);
+    const emptyBookmark = thisPost.querySelector('#empty-bookmark');
+    const filledBookmark = thisPost.querySelector('#filled-bookmark');
+    //const emptyBookmark = thisPost.getElementById('empty-bookmark');
+    //const filledBookmark = thisPost.getElementById('filled-bookmark');
+    if (isSaved) {
+      setIsSaved(false);
+      emptyBookmark.style.display = 'block';
+      filledBookmark.style.display = 'none';
+    } else {
+      setIsSaved(true);
+      emptyBookmark.style.display = 'none';
+      filledBookmark.style.display = 'block';
+    }
+
     dispatch(addSavedPost({
       author: author,
       created: created,
@@ -116,7 +132,7 @@ function Post(props) {
   }))};
 
   return (
-    <div className="Post">
+    <div className="Post" id={id}>
       <div className='likes-column'>
         <ImArrowUp className='arrow' id='up-arrow' onClick={handleUpClick} />
         <p id='likes'>{score}</p>
@@ -141,7 +157,8 @@ function Post(props) {
         </div>
         <div className='post-interactions'>
           <button className='post-interactions-button' id='save-button' onClick={handleSaveClick}>
-            <div className='post-interactions-symbol'><BsBookmark /></div>
+            <div className='post-interactions-symbol' id='empty-bookmark'><BsBookmark /></div>
+            <div className='post-interactions-symbol' id='filled-bookmark'><BsFillBookmarkFill /></div>
             <p className='post-interactions-buttontext'>Save</p>
           </button>
         </div>
