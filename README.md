@@ -14,5 +14,3 @@ People should come to this website when they are in need of a laugh.  It connect
 * Jest, Enzyme, and Selenium
 * Git and Github
 * Command Line
-
-New Edit
