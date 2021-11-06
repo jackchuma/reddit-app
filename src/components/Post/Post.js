@@ -3,8 +3,8 @@ import './Post.css';
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import postLogo from './post-logo.png';
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs';
-import { addSavedPost } from '../../features/savedPosts/savedPostsSlice';
-import { useDispatch } from 'react-redux';
+import { addSavedPost, removeSavedPost, selectSavedPosts } from '../../features/savedPosts/savedPostsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Post(props) {
 
@@ -16,9 +16,14 @@ function Post(props) {
   const id = props.id;
   const dispatch = useDispatch();
 
+  const savedPosts = useSelector(selectSavedPosts);
+  let savedPostIds = [];
+  for (let i=0; i<savedPosts.length; i++) {
+    savedPostIds.push(savedPosts[i].id);
+  }
+
   const [ups, setUps] = useState(props.ups);
   const [downs, setDowns] = useState(props.downs);
-  const [isSaved, setIsSaved] = useState(props.isSaved);
 
   let rawScore = ups - downs;
   let score = rawScore.toString();
@@ -108,28 +113,29 @@ function Post(props) {
     const thisPost = document.getElementById(id);
     const emptyBookmark = thisPost.querySelector('#empty-bookmark');
     const filledBookmark = thisPost.querySelector('#filled-bookmark');
-    //const emptyBookmark = thisPost.getElementById('empty-bookmark');
-    //const filledBookmark = thisPost.getElementById('filled-bookmark');
-    if (isSaved) {
-      setIsSaved(false);
-      emptyBookmark.style.display = 'block';
-      filledBookmark.style.display = 'none';
-    } else {
-      setIsSaved(true);
+    const savedIndex = savedPostIds.indexOf(id);
+
+    if (savedIndex === -1) {
       emptyBookmark.style.display = 'none';
       filledBookmark.style.display = 'block';
-    }
 
-    dispatch(addSavedPost({
-      author: author,
-      created: created,
-      downs: downs,
-      id: id,
-      thread: thread,
-      title: title,
-      ups: ups,
-      url: url
-  }))};
+      dispatch(addSavedPost({
+        author: author,
+        created: created,
+        downs: downs,
+        id: id,
+        thread: thread,
+        title: title,
+        ups: ups,
+        url: url
+      }))
+    } else {
+      emptyBookmark.style.display = 'block';
+      filledBookmark.style.display = 'none';
+
+      dispatch(removeSavedPost({ id: id }));
+    }
+};
 
   return (
     <div className="Post" id={id}>
