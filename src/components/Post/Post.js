@@ -109,16 +109,18 @@ function Post(props) {
     score = calculateScore(ups, downs);
   }
 
-  const handleSaveClick = () => {
-    const thisPost = document.getElementById(id);
-    const emptyBookmark = thisPost.querySelector('#empty-bookmark');
-    const filledBookmark = thisPost.querySelector('#filled-bookmark');
+  const checkIsSaved = () => {
     const savedIndex = savedPostIds.indexOf(id);
+    if (savedIndex !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-    if (savedIndex === -1) {
-      emptyBookmark.style.display = 'none';
-      filledBookmark.style.display = 'block';
-
+  const handleSaveClick = () => {
+    
+    if (!checkIsSaved()) {
       dispatch(addSavedPost({
         author: author,
         created: created,
@@ -130,12 +132,17 @@ function Post(props) {
         url: url
       }))
     } else {
-      emptyBookmark.style.display = 'block';
-      filledBookmark.style.display = 'none';
-
       dispatch(removeSavedPost({ id: id }));
     }
 };
+
+const Saved = () => {
+  if (checkIsSaved()) {
+    return <div className='post-interactions-symbol' id='filled-bookmark'><BsFillBookmarkFill /></div>
+  } else {
+    return <div className='post-interactions-symbol' id='empty-bookmark'><BsBookmark /></div>
+  }
+}
 
   return (
     <div className="Post" id={id}>
@@ -163,8 +170,7 @@ function Post(props) {
         </div>
         <div className='post-interactions'>
           <button className='post-interactions-button' id='save-button' onClick={handleSaveClick}>
-            <div className='post-interactions-symbol' id='empty-bookmark'><BsBookmark /></div>
-            <div className='post-interactions-symbol' id='filled-bookmark'><BsFillBookmarkFill /></div>
+            <Saved />
             <p className='post-interactions-buttontext'>Save</p>
           </button>
         </div>
