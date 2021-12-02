@@ -13,4 +13,3 @@ People should come to this website when they are in need of a laugh.  It connect
 * Redux
 * Git and Github
 * Command Line
-*
